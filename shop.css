@@ -1,0 +1,80 @@
+
+*{
+  
+  font-family: 'Poppins', sans-serif;
+}
+
+#paymentDetails{
+    display: flex;
+    
+}
+.numberOfItems {
+  position: absolute;
+  top: 0;
+  right: 5%;
+
+  height: 30px;
+  width: 30px;
+
+  background-color: red;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: #fff;
+  font-size: 20px;
+}
+
+
+.productWrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+#checkoutTotal{
+    font-weight: bold;
+}
+
+.headLine2{
+    margin: 20px;
+}
+.buttonWrapper {
+  position: fixed;
+  margin-left: 85px;
+  z-index: 2;
+  bottom: 5%;
+  right: 5%;
+
+  border-radius: 50%;
+  background-color: lightblue;
+  border: 1px solid #000;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+
+  width: 75px;
+  height: 75px;
+
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttonWrapper:hover {
+  background-color: blue;
+  color:white;
+}
+
+@media (max-width: 768px) {
+  .buttonWrapper {
+    width: 75px;
+    height: 75px;
+  }
+}
+
+
+
+

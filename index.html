@@ -1,0 +1,365 @@
+
+<!-- DavisProject2 
+author: Scott Davis-->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <!-- <link rel="stylesheet" href="index.css"> -->
+     <link rel="stylesheet" href="product.css">
+     <link rel="stylesheet" href="shop.css"> 
+     <link rel="stylesheet" href="payPage.css"> 
+     <script src="shop2.js" defer></script>
+     <script src="" defer></script>
+     
+     
+     <div id="game1"></div>
+     <div id="game2"></div>
+     <div id="game3"></div>
+
+     
+
+      
+     
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="shop.js" defer></script>
+<!--sliders were not working, so went to stackoverflow and found out
+these scripts need to be loaded into the head tag for it ot work properly-->
+<!--cdn script to load jquery-->
+<script
+			  src="https://code.jquery.com/jquery-3.7.0.js"
+			  integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+			  crossorigin="anonymous">
+</script>
+
+     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <title>Davis Project Intermediate web dev course WYWM</title>
+    <script src="https://kit.fontawesome.com/231176111a.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  </head>
+<body>
+    <!--Bootstrap NavBar-->
+<nav class="navbar navbar-expand-lg bg-body-tertiary" class="nav2">
+  <div class="container-fluid">
+    <a class="navbar-brand " href="index.html">Gamers<b class="R">R</b>us</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active text-info" aria-current="page" href="index.html">Home</a>
+        </li>
+       
+        <li class="nav-item">
+          <a class="nav-link text-info" href="shop.html">Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-info" href="shop.html">New Games</a>
+          
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<!--slider with 3 info slides-->
+ <!--global parent for our item divs-->
+<div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <!--slider item #1 active-->
+    <div class="carousel-item active">
+        <div class="container">
+            <h1 class="headline">Our Games Are Great</h1>
+            <p>look at how well they operate</p>
+            <a href="shop.html" class="btn btn-md btn-primary">Shop Now</a>
+        </div>
+    </div>
+    
+
+    <!--slider item 2-->
+    <div class="carousel-item">
+        <div class="container">
+            <h1 class="headline">Our Games are Multi-level</h1>
+            <p>look at how well they operate</p>
+            <a href="shop.html" class="btn btn-md btn-primary">Shop Now</a>
+        </div>
+    </div>
+    <!--slider item 3-->
+    <div class="carousel-item">
+        <div class="container">
+            <h1 class="headline">With Worlds Best Technology</h1>
+            <p>look at how well they operate</p>
+            <a href="product.html" class="btn btn-md btn-primary">Shop Now</a>
+        </div>
+    </div>
+    
+</div>
+</div>
+
+  
+<footer class="bg-light text-dark pt-5 pb-4">
+    <div class="container text-center text-md-end">
+        <div class="row text-center text-md-left">
+            <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                <h5 class="mb-4 font-weight-bold text-info">We/Us</h5>
+                <!--hr = Thematic Break -->
+              <hr class="mb -4">
+                <p>
+                    We are a gaming manufacturer who started out as 4 gaming entusiasts who decided to 
+                    turn this passion and have been succesfull for 14 years 
+                    
+                </p>
+                
+            </div>
+            <div class="col-2-md-2 col-lg-2 col-xl-3 mx-auto mt-3">
+                <h5 class="mb-4 font-weight-bold text-info">Our Products</h5>
+                <hr class="mb-4">
+                 <p>
+                    We build engaging world class online multi player games using the 
+                    most modern technology available today.
+                </p>
+
+                
+
+            </div>
+            <div class="col-2-md-2 col-lg-2 col-xl-3 mx-auto mt-3">
+              <h5 class="mb-4 font-weight-bold text-info">Contact Us</h5>
+                <hr class="mb-4">
+                <p>
+                    <i class="fas fa-phone mr-3" > 902-999-0909</i>
+                </p>
+                <p>
+                    <i class="fas fa-home mr-3"> Halifax NS</i>
+                </p>
+                <p>
+                    <a class="fas fa-envelope nav-link font-weight-bold " href = "scottdavis27@hotmail.com"> Send Us an Email</a>
+                    
+
+                </p>
+
+              
+              </div>
+
+            </div>
+            
+            
+                
+        </div>
+            
+    </div>
+
+    <hr class="mb-5">
+
+
+    
+
+</footer>
+
+
+<!--shopping cart template-->
+          
+<!--Triggers the shopping cart modal upon toggle-->
+<div class="buttonWrapper" data-bs-toggle="modal" href="#exampleModal">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag-heart" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5v-.5Zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0ZM14 14V5H2v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1ZM8 7.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z"/>
+    </svg>
+    <div class="numberOfItems">0</div>
+</div>
+
+<!-- Modal -->
+<!--the close buttons on bootstrap both and modal toast code do not work
+  did some research on stack overflow and data-bs-dismiss works instead of the 
+  given data-dismiss
+-->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Shopping Cart</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <section class="container content-section">
+        <h2 class="section-header fs-6 mt-4 p-">No items...Please add items to your cart</h2>
+       
+
+         
+    </section>
+      </div>
+      <div class="modal-footer">
+        
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" id="btnCheckout" class="btn btn-primary">Continue to Checkout</button>
+        <div id="checkoutTotal"><p>Total Price: $1200</p></div>
+
+   <!--payment form-->
+    <div id="container2"   class="container">
+
+
+    <form id="contactForm" class="row needs-validation" validate>
+ 
+
+       <div id="paymentDetails">
+       
+        
+        <h2 id="h2" class="headline3 mr-5">Check Out Details</h2>
+        <button id=btnCheckout2 type="button" class="btn btn-primary m-lg-1"><strong>X</strong></button>
+
+
+       </div> 
+        
+        <div id="checkoutTotal2"><strong>Total: $1200</strong></div>
+        <div class="inputBox">
+            <span>Full Name</span>
+            <input type="text" id="name" maxlength="16" class="card-number-input" placeholder="eg.John Doe" >
+        </div>
+        <div class="inputBox md-lg-5">
+            <span>Address</span>
+            <input type="text" id="address" maxlength="16" class="card-number-input" placeholder="28 Dominic Dr. Sydney Mines NS" >
+        </div>
+        <div class="inputBox md-lg-5">
+            <span>Email</span>
+            <input type="text" id="email" maxlength="16" class="card-number-input" placeholder="Email" autocomplete="email" >
+        </div>
+        <div class="inputBox">
+            <span>Phone</span>
+            <input type="text" id="phone" maxlength="16" class="card-number-input" placeholder="902-999-0909" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" >
+        </div>
+        <div class="inputBox" >
+            <span>Card Number</span>
+            <input type="text"id="creditCard" maxlength="20" class="card-number-input" placeholder="xxxx xxxx xxxx xxxx" >
+        </div>
+        <div class="inputBox">
+            <span>Name on Card</span>
+            <input type="text" id="nameOnCard" class="card-holder-input" >
+        </div>
+        <div class="flexbox">
+            <div class="inputBox">
+                <span>Expiration mm</span>
+                <select name="" id="" class="month-input" >
+                    <option value="month" >month</option>
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                    <option value="06">06</option>
+                    <option value="07">07</option>
+                    <option value="08">08</option>
+                    <option value="09">09</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                </select>
+            </div>
+            <div class="inputBox">
+                <span>Expiration year</span>
+                <select name="" id="" class="year-input" >
+                    <option value="year" selected disabled>year</option>
+                    <option value="2021">2021</option>
+                    <option value="2022">2022</option>
+                    <option value="2023">2023</option>
+                    <option value="2024">2024</option>
+                    <option value="2025">2025</option>
+                    <option value="2026">2026</option>
+                    <option value="2027">2027</option>
+                    <option value="2028">2028</option>
+                    <option value="2029">2029</option>
+                    <option value="2030">2030</option>
+                </select>
+            </div>
+            <div class="inputBox">
+                <span>CVV</span>
+                <input type="text" maxlength="4" class="cvv-input" placeholder="eg. 354" >
+            </div>
+        </div>
+        <input type="submit" value="submit" class="submit-btn">
+    </form>
+
+</div>    
+        
+        
+      </div>
+    </div>
+  </div>
+</div>
+        
+        
+        
+      </div>
+    </div>
+  </div>
+</div>
+ 
+
+<!--cdn link for firebase configuration-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+
+<script>
+
+
+
+const firebaseConfig = {
+          apiKey: "AIzaSyDm3ibkwIyj2cP4bTMlwtmoZ0z_QIuHJjE",
+
+          authDomain: "davisproject2-af99a.firebaseapp.com",
+
+          databaseURL:
+            "https://davisproject2-af99a-default-rtdb.firebaseio.com",
+
+          projectId: "davisproject2-af99a",
+
+          storageBucket: "davisproject2-af99a.appspot.com",
+
+          messagingSenderId: "1025834514468",
+
+          appId: "1:1025834514468:web:30991c512d4f0aa6ff80b1",
+
+          measurementId: "G-Y2R1V7RZSD",
+        };
+        //initialize the firebase app
+
+       if (firebase.apps.length == 0) {
+          firebase.initializeApp(firebaseConfig);
+        } 
+        
+      
+        //reference for our database
+        const contactFormDB = firebase.database().ref("DavisProject2");
+       const db = firebase.firestore();
+        // const db = firebase.database().ref("totalItems"); 
+
+       const itemQty = document.querySelector(".numberOfItems");
+       
+
+
+         
+        db.collection("totalItems").get().then((snapshot) =>{
+          snapshot.docs.map(doc => {
+            var x = doc.data().itemQuantity
+            console.log(x + " this is the shop.htm page 000000000000000000000000000000")
+            document.querySelector(".numberOfItems").innerHTML = x;
+          })
+        }); 
+
+ </script>
+
+
+
+
+
+<!--smtpjs api link for email service-->
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</body>
+</html>

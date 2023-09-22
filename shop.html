@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="product.css">
+    <link rel="stylesheet" href="shop.css">
+    <link rel="stylesheet" href="payPage.css">
+    <script src="shop2.js" defer></script>
+    
+     
+     <!--cdn script to load jquery-->
+<script
+			  src="https://code.jquery.com/jquery-3.7.0.js"
+			  integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+			  crossorigin="anonymous">
+</script>
+     
+<!--cdn link for firebase configuration-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase-database.js"></script>
+
+
+<!-- initialize and configure firebase/firestore...also update shopping 
+button item total when shop page loads
+-->
+<script>
+
+
+
+const firebaseConfig = {
+          apiKey: "AIzaSyDm3ibkwIyj2cP4bTMlwtmoZ0z_QIuHJjE",
+
+          authDomain: "davisproject2-af99a.firebaseapp.com",
+
+          databaseURL:
+            "https://davisproject2-af99a-default-rtdb.firebaseio.com",
+
+          projectId: "davisproject2-af99a",
+
+          storageBucket: "davisproject2-af99a.appspot.com",
+
+          messagingSenderId: "1025834514468",
+
+          appId: "1:1025834514468:web:30991c512d4f0aa6ff80b1",
+
+          measurementId: "G-Y2R1V7RZSD",
+        };
+        //initialize the firebase app
+
+       if (firebase.apps.length == 0) {
+          firebase.initializeApp(firebaseConfig);
+        } 
+        
+      
+        //reference for our database
+      const contactFormDB = firebase.database().ref("DavisProject2");
+       const db = firebase.firestore();
+        // const db = firebase.database().ref("totalItems"); 
+
+       const itemQty = document.querySelector(".numberOfItems");
+       
+
+
+         
+        db.collection("totalItems").get().then((snapshot) =>{
+          snapshot.docs.map(doc => {
+            var x = doc.data().itemQuantity
+            console.log(x + " this is the shop.htm page 000000000000000000000000000000")
+            document.querySelector(".numberOfItems").innerHTML = x;
+          })
+        }); 
+
+ </script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <title>Davis Project Intermediate web dev course WYWM</title>
+    <scrip src="https://kit.fontawesome.com/231176111a.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  </head>
+
+    <!--Bootstrap NavBar-->
+<nav class="navbar navbar-expand-lg bg-body-tertiary" class="nav2">
+  <div class="container-fluid">
+    <a class="navbar-brand " href="index.html">Gamers<b class="R">R</b>us</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active text-info" aria-current="page" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-info" href="shop.html">Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-info" href="#"></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div  class="container d-flex">
+   <!--Game 1 add to cart toast-->
+<div aria-live="polite" aria-atomic="true" style="position: relative; min-height: 70px ">
+<div class="toast-header" style="position: absolute; top: 0; right: 20;">
+<div class="toast" role="alert"  aria-live="assertive" aria-atomic="true">
+  <div class="toast-header">
+  
+    <strong  class="mr-auto">Game 1</strong>
+    <small class="text-muted">1 mins ago</small>
+    <button type="button" class="ml-2 mb-1 close" data-bs-dismiss="toast" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="toast-body">
+    Your Game has been added to your cart
+  </div>
+</div>
+</div>
+</div>
+
+<!--Game 2 add to cart toast-->
+<div aria-live="polite" aria-atomic="true" style="position: relative; min-height: 70px ">
+<div class="toast-header" style="position: absolute; top: 0; right: 50;">
+<div id="toast2" class="toast" role="alert"  aria-live="assertive" aria-atomic="true">
+  <div class="toast-header">
+  
+    <strong  class="mr-auto">Game 2</strong>
+    <small class="text-muted">1 mins ago</small>
+    <button type="button" class="ml-2 mb-1 close" data-bs-dismiss="toast" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="toast-body">
+    Your Game has been added to your cart
+  </div>
+
+</div>
+</div>
+</div>
+<!--Game 3 add to cart toast-->
+<div aria-live="polite" aria-atomic="true" style="position: relative; min-height: 70px ">
+<div class="toast-header" style="position: absolute; top: 0; right: 50;">
+<div id="toast3" class="toast" role="alert"  aria-live="assertive" aria-atomic="true">
+  <div class="toast-header">
+  
+    <strong class="mr-auto">Game 3</strong>
+    <small class="text-muted"> mins ago</small>
+    <button type="button" class="ml-2 mb-1 close" data-bs-dismiss="toast" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="toast-body">
+    Your Game has been added to your cart
+  </div>
+
+</div>
+</div>
+</div>
+
+<!--Game 4 add to cart toast-->
+<div aria-live="polite" aria-atomic="true" style="position: relative; min-height: 70px ">
+<div class="toast-header" style="position: absolute; top: 0; right: 50;">
+<div id="toast4" class="toast" role="alert"  aria-live="assertive" aria-atomic="true">
+  <div class="toast-header">
+  
+    <strong class="mr-auto">Game 4</strong>
+    <small class="text-muted"> mins ago</small>
+    <button type="button" class="ml-2 mb-1 close" data-bs-dismiss="toast" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="toast-body">
+    Your Game has been added to your cart
+  </div>
+
+</div>
+</div>
+</div>
+
+<!--Game 5 add to cart toast-->
+<div aria-live="polite" aria-atomic="true" style="position: relative; min-height: 70px ">
+<div class="toast-header" style="position: absolute; top: 0; right: 50;">
+<div id="toast5" class="toast" role="alert"  aria-live="assertive" aria-atomic="true">
+  <div class="toast-header">
+  
+    <strong class="mr-auto">Game 5</strong>
+    <small class="text-muted"> mins ago</small>
+    <button type="button" class="ml-2 mb-1 close" data-bs-dismiss="toast" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="toast-body">
+    Your Game has been added to your cart
+  </div>
+
+</div>
+</div>
+</div>
+
+
+
+
+</div> 
+  
+
+<div id="shop"></div>
+<!--card products-->
+    
+  
+<div  class="container">
+    <div class="row g-4">
+        <!--game 1-->
+         <div class="col-12 col-md-6 col-lg-4">
+            <div class="card">
+                <img id="game1_image" src="https://media.rawg.io/media/games/456/456dea5e1c7e3cd07060c14e96612001.jpg"alt="Gamer1" class="card-img-top">
+                <div class="card-body">
+                    <h5 id="game10"class="card-title ">Game 1</h5>
+                    <p id="release-date" class="card-text">00-00-0000</p>
+                    <p id="genre" class="card-text">Genre</p>
+                    <p class="card-text">Price: $50</p>
+                    <div id = "game1" class="btn"><a href="#" class="btn btn-md btn-primary">Add Item</a>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+<!--game 2-->
+    <div class="col-12 col-md-6 col-lg-4">
+          <div class="card">
+            <img id="game2_image" src="https://media.rawg.io/media/games/b7d/b7d3f1715fa8381a4e780173a197a615.jpg" alt="Gamer1" class="card-img-top">
+                <div class="card-body">
+                  <h5 id="game11" class="card-title">Game 2</h5>
+                  <p id="release-date2" class="card-text">00-00-0000</p>
+                  <p id="genre2" class="card-text">Genre</p>
+                  <p class="card-text">Price: $75</p>
+                  <div id = "game2" class="btn"><a href="#" class="btn btn-md btn-primary">Add Item</a>
+                  </div>
+                    
+                </div>
+          </div>
+    </div>
+    
+         <!--game 3-->
+    <div class="col-12 col-md-6 col-lg-4 ">
+        <div class="card">
+                <img src="https://media.rawg.io/media/games/8cc/8cce7c0e99dcc43d66c8efd42f9d03e3.jpg"alt="Gamer1" class="card-img-top">
+                <div class="card-body">
+                    <h5 id="game13"  class="card-title">Gamer 3</h5>
+                    <p id="release-date3" class="card-text">00-00-0000</p>
+                    <p id="genre3" class="card-text">Genre</p>
+                    <p class="card-text">Price: $100</p>
+                    <div id="game3" class="btn"><a href ="#" class="btn btn-md btn-primary">Add Item</a>
+                    </div>
+                </div>
+          </div>
+    </div>
+
+    <!--game 4-->
+    <div class="col-12 col-md-6 col-lg-4 ">
+        <div class="card">
+                <img src="https://media.rawg.io/media/games/26d/26d4437715bee60138dab4a7c8c59c92.jpg"alt="Gamer1" class="card-img-top">
+                <div class="card-body">
+                    <h5 id="game14"  class="card-title">Game 4</h5>
+                    <p id="release-date4" class="card-text">00-00-0000</p>
+                    <p id="genre4" class="card-text">Genre</p>
+                    <p class="card-text">Price: $100</p>
+                    <div id="game4" class="btn"><a href ="#" class="btn btn-md btn-primary">Add Item</a>
+                    </div>
+                </div>
+          </div>
+    </div>
+
+
+ <!--game 5-->
+    <div class="col-12 col-md-6 col-lg-4 ">
+        <div class="card">
+                <img src="https://media.rawg.io/media/games/6fc/6fcf4cd3b17c288821388e6085bb0fc9.jpg"alt="Gamer1" class="card-img-top">
+                <div class="card-body">
+                    <h5 id="game15"  class="card-title">Game 5</h5>
+                    <p id="release-date5" class="card-text">00-00-0000</p>
+                    <p id="genre5" class="card-text">Genre</p>
+                    <p class="card-text">Price: $80</p>
+                    <div id="game5" class="btn"><a href ="#" class="btn btn-md btn-primary">Add Item</a>
+                    </div>
+                </div>
+          </div>
+    </div>
+    
+       
+        
+    </div>
+  </div>
+
+
+</div>
+
+</div>
+
+
+     
+    
+
+
+ 
+        
+<!--Triggers the shopping cart modal upon toggle-->
+<div class="buttonWrapper" data-bs-toggle="modal" href="#exampleModal">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag-heart" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5v-.5Zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0ZM14 14V5H2v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1ZM8 7.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z"/>
+    </svg>
+     <div class="numberOfItems">0</div>
+</div>
+
+<!-- Modal -->
+<!--the close buttons on bootstrap both and modal toast code do not work
+  did some research on stack overflow and data-bs-dismiss works instead of the 
+  given data-dismiss
+-->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Shopping Cart</h5>
+        <button type="button" id="close" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <section class="container content-section">
+        <h2 class="section-header fs-6 mt-4 p-">No items...Please add items to your cart</h2>
+       
+
+         
+    </section>
+      </div>
+    <div class="modal-footer">
+     
+        <button type="button" id="closeModal" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button id="btnCheckout" type="button" class="btn btn-primary "> Checkout</button>
+
+        
+   
+    
+     <div id="checkoutTotal"><p>Total Price: $0.00</p></div>
+    
+    <!--payment form-->
+    <div id="container2"   class="container">
+
+
+    <form id="contactForm" action= "" method="post" class="row needs-validation" validate>
+ 
+
+       <div id="paymentDetails">
+       
+        
+        <h2 id="h2" class="headline3 mr-5">Check Out Details</h2>
+        <button id=btnCheckout2 type="button" class="btn btn-primary m-lg-1"><strong>X</strong></button>
+
+
+       </div> 
+        
+        <div id="checkoutTotal2"><strong>Total: $0.00</strong></div>
+        <div class="inputBox">
+            <span>Full Name</span>
+            <input type="text" id="name" maxlength="16" class="card-number-input" placeholder="eg.John Doe" required >
+        </div>
+        <div class="inputBox md-lg-5">
+            <span>Address</span>
+            <input type="text" id="address" maxlength="16" class="card-number-input" placeholder="28 Dominic Dr. Sydney Mines NS" required>
+        </div>
+        <div class="inputBox md-lg-5">
+            <span>Email</span>
+            <input type="email" id="email" maxlength="30" class="card-number-input" placeholder="Email" autocomplete="email" required>
+        </div>
+        <div class="inputBox">
+            <span>Phone</span>
+            <input type="text" id="phone" maxlength="16" class="card-number-input" placeholder="902-999-0909" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+        </div>
+        <div class="inputBox" >
+            <span>Card Number</span>
+            <input type="text"id="creditCard" maxlength="20" class="card-number-input" placeholder="xxxx xxxx xxxx xxxx" required>
+        </div>
+        <div class="inputBox">
+            <span>Name on Card</span>
+            <input type="text" id="nameOnCard" class="card-holder-input" required >
+        </div>
+        <div class="flexbox">
+            <div class="inputBox">
+                <span>Expiration mm</span>
+                <select name="" id="" class="month-input" required>
+                    <option value="month" >month</option>
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                    <option value="06">06</option>
+                    <option value="07">07</option>
+                    <option value="08">08</option>
+                    <option value="09">09</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                </select>
+            </div>
+            <div class="inputBox" >
+                <span>Expiration year</span>
+                <select name="" id="" class="year-input" required>
+                    <option value="year" selected disabled >year</option>
+                    <option value="2021">2021</option>
+                    <option value="2022">2022</option>
+                    <option value="2023">2023</option>
+                    <option value="2024">2024</option>
+                    <option value="2025">2025</option>
+                    <option value="2026">2026</option>
+                    <option value="2027">2027</option>
+                    <option value="2028">2028</option>
+                    <option value="2029">2029</option>
+                    <option value="2030">2030</option>
+                </select>
+            </div>
+            <div class="inputBox">
+                <span>CVV</span>
+                <input type="text" maxlength="4" class="cvv-input" placeholder="eg. 355" required>
+            </div>
+        </div>
+        <input type="submit" value="submit" class="submit-btn">
+    </form>
+
+</div>    
+        
+        
+      </div>
+    </div>
+  </div>
+</div>
+ 
+
+
+<!--cdn link for firebase configuration-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase-database.js"></script>
+
+
+
+
+
+
+
+
+
+
+<!--smtpjs api link for email service-->
+<script src="https://smtpjs.com/v3/smtp.js">
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</body>
+</html> 
